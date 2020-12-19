@@ -1,0 +1,32 @@
+INSERT INTO Zamestnanec VALUES('Franta', 'Nevrly', 'nevrlak40@gmail.com', '765567567', 1)
+
+INSERT INTO Trida VALUES("4.A", 1)
+
+INSERT INTO Student VALUES('Jiri', 'Dvorsky', 'dvorakjenej@seznam.cz', 'dvorska13@gmail.com', '789789789', 1)
+
+INSERT INTO Predmet VALUES('Matematika')
+
+INSERT INTO Vyucuje VALUES(1, 1)
+
+INSERT INTO Studuje VALUES(1, 1)
+
+INSERT INTO Znamka VALUES(4, 'test', 1)
+
+select * from Zamestnanec
+select * from Trida
+join Zamestnanec z on z.ucitel_id = trida.ucitel_id
+
+select * from Predmet
+select *from Student
+
+select * from Vyucuje
+select * from Studuje
+select * from Znamka
+
+select vy.ucitel_id from Znamka z
+join Studuje s on s.studuje_id = z.studuje_id
+join Predmet p on p.predmet_id = s.predmet_id
+join Student st on st.student_id = s.student_id
+join Trida t on t.trida_id = st.trida_id
+join Zamestnanec za on za.ucitel_id = t.ucitel_id 
+join Vyucuje vy on vy.predmet_id = p.predmet_id

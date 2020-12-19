@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Detail";
+}
+
+<br>
+<br>
+
+@ViewBag.predmet.jmeno
+<table style="width:20%" border="1">
+    <tr>
+        <th>
+            Znamka
+        </th>
+        <th>
+            Popis
+        </th>
+    </tr>
+    @foreach (dynamic mark in ViewBag.marks)
+    {
+        <tr>
+            <th>
+                @mark.znamka
+            </th>
+            <th>
+                @mark.popis
+            </th>
+        </tr>
+    }
+</table>
+
+<br />
+
+<form action="@Url.Action("SendMarks")" method="post">
+    <input type="hidden" name="id" value="@ViewBag.predmet.id" />
+    <button type="submit">Stahnout znamky ve formatu CSV</button>
+</form>

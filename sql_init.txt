@@ -1,0 +1,141 @@
+CREATE TABLE [Zamestnanec]
+(
+ [ucitel_id] int NOT NULL IDENTITY,
+ [Jmeno]     varchar(50) NOT NULL ,
+ [Prijmeni]  varchar(50) NOT NULL ,
+ [Email]     varchar(50) NOT NULL ,
+ [Telefon]   varchar(50) NOT NULL ,
+ [Reditel]   bit NOT NULL ,
+
+ CONSTRAINT [PK_zamestnanec] PRIMARY KEY CLUSTERED ([ucitel_id] ASC)
+);
+GO
+
+CREATE TABLE [Predmet]
+(
+ [predmet_id] int NOT NULL IDENTITY,
+ [Jmeno]      varchar(50) NOT NULL ,
+
+
+ CONSTRAINT [PK_predmet] PRIMARY KEY CLUSTERED ([predmet_id] ASC)
+);
+GO
+
+CREATE TABLE [Vyucuje]
+(
+ [vyucuje_id] int NOT NULL IDENTITY,
+ [ucitel_id]  int NOT NULL ,
+ [predmet_id] int NOT NULL ,
+
+
+ CONSTRAINT [PK_vyucuje] PRIMARY KEY CLUSTERED ([vyucuje_id] ASC),
+ CONSTRAINT [FK_62] FOREIGN KEY ([ucitel_id])  REFERENCES [Zamestnanec]([ucitel_id]),
+ CONSTRAINT [FK_68] FOREIGN KEY ([predmet_id])  REFERENCES [Predmet]([predmet_id])
+);
+GO
+
+
+CREATE NONCLUSTERED INDEX [fkIdx_62] ON [Vyucuje] 
+ (
+  [ucitel_id] ASC
+ )
+
+GO
+
+CREATE NONCLUSTERED INDEX [fkIdx_68] ON [Vyucuje] 
+ (
+  [predmet_id] ASC
+ )
+
+GO
+
+CREATE TABLE [Trida]
+(
+ [trida_id]    int NOT NULL IDENTITY,
+ [Jmeno tridy] varchar(50) NOT NULL ,
+ [ucitel_id]   int NOT NULL ,
+
+
+ CONSTRAINT [PK_trida] PRIMARY KEY CLUSTERED ([trida_id] ASC),
+ CONSTRAINT [FK_19] FOREIGN KEY ([ucitel_id])  REFERENCES [Zamestnanec]([ucitel_id])
+);
+GO
+
+
+CREATE NONCLUSTERED INDEX [fkIdx_19] ON [Trida] 
+ (
+  [ucitel_id] ASC
+ )
+GO
+
+CREATE TABLE [Student]
+(
+ [student_id]     int NOT NULL IDENTITY,
+ [Jmeno]          varchar(50) NOT NULL ,
+ [Prijmeni]       varchar(50) NOT NULL ,
+ [Email]          varchar(50) NOT NULL ,
+ [Email rodice]   varchar(50) NOT NULL ,
+ [Telefon rodice] varchar(50) NOT NULL ,
+ [trida_id]       int NOT NULL ,
+
+
+ CONSTRAINT [PK_student] PRIMARY KEY CLUSTERED ([student_id] ASC),
+ CONSTRAINT [FK_24] FOREIGN KEY ([trida_id])  REFERENCES [Trida]([trida_id])
+);
+GO
+
+
+CREATE NONCLUSTERED INDEX [fkIdx_24] ON [Student] 
+ (
+  [trida_id] ASC
+ )
+
+GO
+
+CREATE TABLE [Studuje]
+(
+ [studuje_id] int NOT NULL IDENTITY,
+ [student_id] int NOT NULL ,
+ [predmet_id] int NOT NULL ,
+
+
+ CONSTRAINT [PK_studuje] PRIMARY KEY CLUSTERED ([studuje_id] ASC),
+ CONSTRAINT [FK_50] FOREIGN KEY ([student_id])  REFERENCES [Student]([student_id]),
+ CONSTRAINT [FK_53] FOREIGN KEY ([predmet_id])  REFERENCES [Predmet]([predmet_id])
+);
+GO
+
+CREATE TABLE [Znamka]
+(
+ [znamka_id]  int NOT NULL IDENTITY,
+ [Znamka]     int NOT NULL ,
+ [Popis]      varchar(50) NOT NULL ,
+ [studuje_id] int NOT NULL ,
+
+
+ CONSTRAINT [PK_znamka] PRIMARY KEY CLUSTERED ([znamka_id] ASC),
+ CONSTRAINT [FK_58] FOREIGN KEY ([studuje_id])  REFERENCES [Studuje]([studuje_id])
+);
+GO
+
+
+CREATE NONCLUSTERED INDEX [fkIdx_58] ON [Znamka] 
+ (
+  [studuje_id] ASC
+ )
+
+GO
+
+CREATE NONCLUSTERED INDEX [fkIdx_50] ON [Studuje] 
+ (
+  [student_id] ASC
+ )
+
+GO
+
+CREATE NONCLUSTERED INDEX [fkIdx_53] ON [Studuje] 
+ (
+  [predmet_id] ASC
+ )
+
+GO

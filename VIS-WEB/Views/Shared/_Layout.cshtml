@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <div>
+        <form action="@Url.Action("Register")" method="post">
+            <input type="hidden" />
+            <button type="submit">Prihlasit se k maturite</button>
+        </form>
+    </div>
+    <div>Seznam predmetu</div>
+    <div>
+        @foreach (dynamic subject in ViewBag.subjects)
+        {
+            <li><a href="@Url.Action("Detail", "Home", new{ id = subject.id })">@subject.jmeno</a></li>
+        }
+    </div>
+
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

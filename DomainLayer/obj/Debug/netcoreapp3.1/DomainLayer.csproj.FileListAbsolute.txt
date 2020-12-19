@@ -1,0 +1,12 @@
+C:\dev\VIS\DomainLayer\bin\Debug\netcoreapp3.1\DomainLayer.deps.json
+C:\dev\VIS\DomainLayer\bin\Debug\netcoreapp3.1\DomainLayer.dll
+C:\dev\VIS\DomainLayer\bin\Debug\netcoreapp3.1\DomainLayer.pdb
+C:\dev\VIS\DomainLayer\bin\Debug\netcoreapp3.1\DataLayer.dll
+C:\dev\VIS\DomainLayer\bin\Debug\netcoreapp3.1\DataLayer.pdb
+C:\dev\VIS\DomainLayer\obj\Debug\netcoreapp3.1\DomainLayer.csprojAssemblyReference.cache
+C:\dev\VIS\DomainLayer\obj\Debug\netcoreapp3.1\DomainLayer.AssemblyInfoInputs.cache
+C:\dev\VIS\DomainLayer\obj\Debug\netcoreapp3.1\DomainLayer.AssemblyInfo.cs
+C:\dev\VIS\DomainLayer\obj\Debug\netcoreapp3.1\DomainLayer.csproj.CoreCompileInputs.cache
+C:\dev\VIS\DomainLayer\obj\Debug\netcoreapp3.1\DomainLayer.csproj.CopyComplete
+C:\dev\VIS\DomainLayer\obj\Debug\netcoreapp3.1\DomainLayer.dll
+C:\dev\VIS\DomainLayer\obj\Debug\netcoreapp3.1\DomainLayer.pdb

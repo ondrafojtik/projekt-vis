@@ -1,0 +1,21 @@
+﻿@model MaturitaForm
+@{
+    ViewData["Title"] = "Detail";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary()
+    <div>
+        @Html.LabelFor(x => x.jmeno)
+        @Html.TextBoxFor(x => x.jmeno)
+        @Html.ValidationMessageFor(x => x.jmeno)
+    </div>
+    <div>
+        @Html.LabelFor(x => x.prijmeni)
+        @Html.TextBoxFor(x => x.prijmeni)
+        @Html.ValidationMessageFor(x => x.prijmeni)
+    </div>
+    
+    <button type="submit">Odeslat</button>
+}

@@ -1,0 +1,9 @@
+C:\dev\VIS\DataLayer\bin\Debug\netcoreapp3.1\DataLayer.deps.json
+C:\dev\VIS\DataLayer\bin\Debug\netcoreapp3.1\DataLayer.dll
+C:\dev\VIS\DataLayer\bin\Debug\netcoreapp3.1\DataLayer.pdb
+C:\dev\VIS\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.AssemblyInfoInputs.cache
+C:\dev\VIS\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.AssemblyInfo.cs
+C:\dev\VIS\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.dll
+C:\dev\VIS\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.pdb
+C:\dev\VIS\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.csproj.CoreCompileInputs.cache
+C:\dev\VIS\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.csprojAssemblyReference.cache
